@@ -34,8 +34,9 @@ function menuForModule(pathname: string) {
     if (pathname.startsWith("/historia-clinica")) {
         return [
             { to: "/historia-clinica", label: "Menú principal", icon: Home },
-            { to: "/historia-clinica/registro", label: "Registro y consulta", icon: FileText },
-            { to: "/historia-clinica/hc", label: "Historias clínicas", icon: LayoutDashboard },
+            { to: "/historia-clinica/pacientes", label: "Registro de historias clínicas", icon: FileText },
+            { to: "/historia-clinica/atendidos", label: "Historias clínicas atendidas", icon: LayoutDashboard },
+            { to: "/historia-clinica/consultas", label: "Historial de historias clínicas", icon: FileText },
         ];
     }
     if (pathname.startsWith("/atencion-medica")) {

@@ -2,7 +2,7 @@ import CampoTexto from "./CampoTexto";
 import CampoSelect from "./CampoSelect";
 import CampoBusqueda from "./CampoBusqueda";
 import TablaResumen from "./TablaResumen";
-import BotonGuardar from "./BotonGuardar";
+import Boton from "@/shared/components/Boton.tsx";
 
 export default function FormRegistroPaciente() {
     return (
@@ -25,7 +25,7 @@ export default function FormRegistroPaciente() {
 
             {/* Botón guardar */}
             <div className="flex justify-end">
-                <BotonGuardar />
+                <Boton texto="Guardar" />
             </div>
         </div>
     );

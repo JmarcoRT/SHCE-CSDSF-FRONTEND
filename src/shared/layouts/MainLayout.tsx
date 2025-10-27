@@ -37,10 +37,10 @@ function menuForModule(pathname: string) {
     }
     if (pathname.startsWith("/atencion-medica")) {
         return [
-            { to: "/atencion-medica", label: "Inicio", icon: Home },
-            { to: "/atencion-medica/psicologia", label: "Psicología", icon: UserPlus },
-            { to: "/atencion-medica/pediatria", label: "Pediatría", icon: UserPlus },
-            { to: "/atencion-medica/obstetricia", label: "Obstetricia", icon: UserPlus },
+            { to: "/atencion-medica", label: "Menú principal", icon: Home },
+            { to: "/atencion-medica/pacientes", label: "Pacientes pendientes", icon: UserPlus },
+            { to: "/atencion-medica/atendidos", label: "Pacientes atendidos", icon: UserPlus },
+            { to: "/atencion-medica/consultas", label: "Historial de consultas", icon: FileText },
         ];
     }
 }

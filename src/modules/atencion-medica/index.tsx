@@ -1,25 +1,16 @@
 import type { RouteObject } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
-
-function AMHome() {
-    return <div>Atención Médica: Inicio</div>;
-}
-function Psicologia() {
-    return <div>Atención Médica: Psicología</div>;
-}
-function Pediatria() {
-    return <div>Atención Médica: Pediatría</div>;
-}
-function Obstetricia() {
-    return <div>Atención Médica: Obstetricia</div>;
-}
+import AtencionHome from "./pages/AtencionHome";
+import PacientesAtendidos from "./pages/PacientesAtendidos";
+import PacientesPendientes from "./pages/PacientesPendientes";
+import HistorialConsultasAM from "./pages/HistorialConsultasAM";
 
 export function AtencionMedicaRoutes() {
     const routes: RouteObject[] = [
-        { path: "", element: <AMHome /> },
-        { path: "psicologia", element: <Psicologia /> },
-        { path: "pediatria", element: <Pediatria /> },
-        { path: "obstetricia", element: <Obstetricia /> },
+        { path: "", element: <AtencionHome /> },
+        { path: "pacientes", element: <PacientesPendientes /> },
+        { path: "atendidos", element: <PacientesAtendidos /> },
+        { path: "consultas", element: <HistorialConsultasAM /> },
     ];
     return useRoutes(routes);
 }

@@ -1,6 +1,6 @@
 export const ROLE_PATHS: Record<string, string> = {
-    Administrador: "/admision",
+    ROL_ADMISION: "/admision",
     ROLE_TRIAJE: "/triaje",
-    ROLE_ATENCION: "/atencion-medica",
-    ROLE_ADMIN: "/admision",
+    Administrador: "/atencion-medica",
+    ROLE_HISTORIA: "/historia-clinica",
 };

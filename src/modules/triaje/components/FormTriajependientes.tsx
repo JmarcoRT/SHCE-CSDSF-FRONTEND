@@ -3,10 +3,6 @@ import { TablaBase } from "@/shared/components/TablaBase.tsx";
 import { datosPacientes, type Paciente } from "../types/tablaTipos";
 
 export default function FormTriajependientes() {
-    function determinarAncho(){
-
-    }
-
     return (
         <div className="space-y-8">
             

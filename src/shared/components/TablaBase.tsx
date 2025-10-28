@@ -7,15 +7,18 @@ type Columna<T> = {
 type TablaBaseProps<T> = {
     columnas: Columna<T>[];
     datos: T[];
+    widthByColumn?: {[columna:number]:string}; //Necesito que se le pase también un parametro tal que cada columna pueda ser accedida y modificable [{1,2},{2,3}]
 };
 
 export function TablaBase<T extends Record<string, unknown>>({
                                                                  columnas,
                                                                  datos,
+                                                                 widthByColumn,
                                                              }: TablaBaseProps<T>) {
+
     return (
         <div className="border border-[#174BAE] rounded-lg overflow-hidden">
-            <table className="w-full text-sm border-collapse">
+            <table className="w-[100%] text-sm border-collapse">
                 {/* ENCABEZADO */}
                 <thead className="bg-[#0066D8] text-white">
                 <tr>
@@ -23,14 +26,17 @@ export function TablaBase<T extends Record<string, unknown>>({
                         <th
                             key={i}
                             className={`px-3 py-2 font-semibold border-x border-[#0066D8] text-left ${
-                                i === 0 ? "border-l-0" : ""
-                            } ${i === columnas.length - 1 ? "border-r-0" : ""}`}
+                                i === 0 ? "border-l-0 text-center" : ""
+                            } ${i === columnas.length - 1 ? "border-r-0" : ""
+                            } ${widthByColumn ? widthByColumn[i] : ""}`}
                         >
                             {col.encabezado}
                         </th>
                     ))}
                 </tr>
                 </thead>
+
+                
 
                 {/* CUERPO */}
                 <tbody>
@@ -40,7 +46,7 @@ export function TablaBase<T extends Record<string, unknown>>({
                             <td
                                 key={j}
                                 className={`px-3 py-2 border-x border-[#0066D8] text-left align-middle ${
-                                    j === 0 ? "border-l-0" : ""
+                                    j === 0 ? "border-l-0 text-center" : ""
                                 } ${j === columnas.length - 1 ? "border-r-0" : ""}`}
                             >
                                 {col.render

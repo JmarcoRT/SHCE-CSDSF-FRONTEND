@@ -2,7 +2,8 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import { useMemo, useState } from "react";
 import { useAuthContext } from "@/shared/hooks/useAuthContext";
 import logo from "@/assets/logoPosta.png";
-import { Home, UserPlus, FileText, LayoutDashboard, Workflow } from "lucide-react";
+import { Home, UserPlus, FileText, LayoutDashboard, Workflow} from "lucide-react";
+import { BookPlus, BriefcaseMedical, ClipboardCheck } from "lucide-react"; //Triaje 
 import { LogOut } from "lucide-react";
 
 function moduleFromPath(pathname: string) {
@@ -24,8 +25,10 @@ function menuForModule(pathname: string) {
     }
     if (pathname.startsWith("/triaje")) {
         return [
-            { to: "/triaje", label: "Dashboard", icon: LayoutDashboard },
-            { to: "/triaje/pacientes", label: "Pacientes", icon: UserPlus },
+            { to: "/triaje", label: "Menú principal", icon: LayoutDashboard },
+            { to: "/triaje/triar-pacientes", label: "Pacientes por atender", icon: BriefcaseMedical },
+            { to: "/triaje/pacientes-triados", label: "Pacientes atendidos", icon: ClipboardCheck },
+            { to: "/triaje/historias-clínicas", label: "Historias clínicas", icon: BookPlus }
         ];
     }
     if (pathname.startsWith("/historia-clinica")) {

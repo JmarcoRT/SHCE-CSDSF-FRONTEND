@@ -1,9 +1,10 @@
 type Columna<T> = {
     clave?: keyof T;
     encabezado: string;
-    render?: (item: T) => React.ReactNode;
+    render?: (item: T) => React.ReactNode; 
 };
 
+//Necesito tambien considerar que cada fila tiene botones asociados a un paciente
 type TablaBaseProps<T> = {
     columnas: Columna<T>[];
     datos: T[];

@@ -4,15 +4,15 @@ type PacienteBase<TExtra extends Record<string, unknown> = Record<string, unknow
 } & TExtra;
 
 
-export type Paciente = PacienteBase<{ id: number; area: string; hora: string }>;
+export type Paciente = PacienteBase<{ id: number; area: string; hora: string, enAtencion: boolean }>; //Estado 0: 1:En atención
 export type Atendido = PacienteBase<{ id: number; atendido_por: string; hora: string }>;
 export type HistorialAM = PacienteBase<{ hora: string; area: string; atendido_por: string; diagnostico: string }>;
 export type HistorialHC = PacienteBase<{ hora_creacion: string; hora_edicion: string; editado_por: string }>;
 
 
-export const datosPacientes: Paciente[] = [
-    { id: 1, identificacion: "12345678", nombre: "María Gutiérrez López", area: "Pediatría", hora: "8:15 am" },
-    { id: 2, identificacion: "72874556", nombre: "Selene Ramos Vera", area: "Odontología", hora: "8:25 am" },
+export const datosPacientess: Paciente[] = [
+    { id: 1, identificacion: "12345678", nombre: "María Gutiérrez López", area: "Pediatría", hora: "8:15 am", enAtencion: true },
+    { id: 2, identificacion: "72874556", nombre: "Selene Ramos Vera", area: "Odontología", hora: "8:25 am", enAtencion:false },
 ];
 
 export const datosAtendidos: Atendido[] = [

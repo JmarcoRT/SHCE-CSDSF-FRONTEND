@@ -2,21 +2,19 @@ import CampoTexto from "@/modules/admision/components/CampoTexto";
 import CampoSelect from "@/modules/admision/components/CampoSelect";
 import { TablaBase } from "@/shared/components/TablaBase.tsx";
 import Boton from "@/shared/components/Boton.tsx";
-import { datosPacientes, type Paciente } from "@/modules/atencion-medica/types/tablaTipos";
-import { Eye, Edit } from "lucide-react";
+import CampoFecha from "@/shared/components/CampoFecha";
+import { datosHistorialAD, type HistorialAD } from "@/modules/atencion-medica/types/tablaTipos";
 
-export default function FormHCatendidos() {
+export default function FormHistorialAdmision() {
     return (
         <div className="space-y-8">
             {/* 🔹 Sección superior */}
             <div className="border border-[#174BAE] rounded-lg p-5 grid grid-cols-4 gap-4 items-end">
                 <CampoTexto label="Buscar por documento" placeholder="Search.." />
                 <CampoTexto label="Buscar por nombres" placeholder="Search.." />
+                <CampoFecha label="Periodo desde" />
+                <CampoFecha label="Hasta" />
                 <CampoSelect label="Filtrar por área" options={["Pediatría", "Odontología"]} />
-
-                <div></div>
-
-                <CampoSelect label="Atendido por" options={["Fernando Rivas", "Edgar Melendez"]} />
 
                 {/* Espaciador opcional (para centrar visualmente el botón) */}
                 <div></div>
@@ -29,24 +27,16 @@ export default function FormHCatendidos() {
 
             {/* 🔹 Tabla de pacientes */}
             <div>
-                <TablaBase<Paciente>
+                <TablaBase<HistorialAD>
                     columnas={[
-                        { clave: "id", encabezado: "#" },
+                        { clave: "fecha", encabezado: "Fecha" },
                         { clave: "identificacion", encabezado: "Identificación" },
                         { clave: "nombre", encabezado: "Paciente" },
-                        { clave: "area", encabezado: "Area" },
-                        { clave: "hora", encabezado: "Hora de atención" },
-                        {
-                            encabezado: "Acción",
-                            render: () => (
-                                <div className="flex gap-2 justify-center">
-                                    <button title="Ver"> <Eye className="w-4 h-4" /> </button>
-                                    <button title="Editar"> <Edit className="w-4 h-4" /> </button>
-                                </div>
-                            ),
-                        },
+                        { clave: "especialidades", encabezado: "Especialidad(es)" },
+                        { clave: "hora", encabezado: "Hora de ingreso" },
+                        { clave: "estado", encabezado: "Estado" },
                     ]}
-                    datos={datosPacientes}
+                    datos={datosHistorialAD}
                 />
             </div>
         </div>

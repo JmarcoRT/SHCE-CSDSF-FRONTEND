@@ -4,8 +4,12 @@ import { TablaBase } from "@/shared/components/TablaBase.tsx";
 import Boton from "@/shared/components/Boton.tsx";
 import { datosPacientes, type Paciente } from "@/modules/atencion-medica/types/tablaTipos";
 import { Eye, Edit, LogOut } from "lucide-react";
+import { useNavegacionHC } from "../hooks/useNavegacionHC";
 
 export default function FormHCpendientes() {
+
+    const { irARegistrarPaciente } = useNavegacionHC();
+
     return (
         <div className="space-y-8">
             {/* 🔹 Sección superior */}
@@ -39,7 +43,7 @@ export default function FormHCpendientes() {
                             render: () => (
                                 <div className="flex gap-2 justify-center">
                                     <button title="Ver"> <Eye className="w-4 h-4" /> </button>
-                                    <button title="Editar"> <Edit className="w-4 h-4" /> </button>
+                                    <button title="Editar" onClick={irARegistrarPaciente}> <Edit className="w-4 h-4" /> </button>
                                     <button title="Salir"> <LogOut className="w-4 h-4" /> </button>
                                 </div>
                             ),

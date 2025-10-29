@@ -16,8 +16,9 @@ function menuForModule(pathname: string) {
     if (pathname.startsWith("/admision")) {
         return [
             { to: "/admision", label: "Menú principal", icon: Home },
-            { to: "/admision/pacientes", label: "Admisión de pacientes", icon: UserPlus },
-            { to: "/admision/historial", label: "Historial de admisión", icon: FileText },
+            { to: "/admision/pacientes", label: "Registrar Paciente", icon: UserPlus },
+            { to: "/admision/admitidos", label: "Pacientes admitidos", icon: FileText },
+            { to: "/admision/historial", label: "Historial de pacientes", icon: FileText },
             { to: "/admision/tablero", label: "Tablero de áreas", icon: LayoutDashboard },
             { to: "/admision/flujo", label: "Flujo de pacientes", icon: Workflow },
         ];

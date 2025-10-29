@@ -26,7 +26,7 @@ function menuForModule(pathname: string) {
     if (pathname.startsWith("/triaje")) {
         return [
             { to: "/triaje", label: "Menú principal", icon: LayoutDashboard },
-            { to: "/triaje/triar-pacientes", label: "Pacientes por atender", icon: BriefcaseMedical },
+            { to: "/triaje/atencion-triaje", label: "Pacientes por atender", icon: BriefcaseMedical },
             { to: "/triaje/pacientes-triados", label: "Pacientes atendidos", icon: ClipboardCheck },
             { to: "/triaje/historias-clínicas", label: "Historias clínicas", icon: BookPlus }
         ];

@@ -22,11 +22,14 @@ export default function CampoSelect({
                     width
                 }
             >
+                <option value="" className="text-gray-400 italic">[Seleccionar especialidad..]</option>
                 {options.map((opt) => (
                     <option key={opt} value={opt}>
                         {opt}
                     </option>
-                ))}
+                ))
+                }
+                
             </select>
         </div>
     );

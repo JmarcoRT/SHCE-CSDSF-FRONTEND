@@ -1,6 +1,4 @@
-
-
-const CampoLlenado = ({
+const CampoLectura = ({
                                           label,
                                           placeholder,
                                           props,
@@ -20,10 +18,12 @@ const CampoLlenado = ({
                     placeholder={placeholder}
                     value={value}
                     className={"border border-[#0066D8] rounded pl-2 pr-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#174BAE] " + props}
+                    readOnly
+                    disabled
                 />
             </div>
         </div>
     );
 }
 
-export default CampoLlenado;
+export default CampoLectura;

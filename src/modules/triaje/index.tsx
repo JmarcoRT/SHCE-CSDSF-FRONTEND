@@ -9,9 +9,9 @@ import AtencionTriaje from "./pages/AtencionTriaje";
 export function TriajeRoutes() {
     const routes: RouteObject[] = [
         { path: "", element: <TriajeHome /> },
-        { path: "triar-pacientes", element: <TriarPacientes /> },
+        { path: "atencion-triaje", element: <TriarPacientes /> },
         { path: "pacientes-triados", element: <PacientesTriados /> },
-        { path: "triar-pacientes/atencion-triaje", element: <AtencionTriaje /> },
+        { path: "atencion-triaje/:idPaciente", element: <AtencionTriaje /> },
         { path: "historias-clínicas", element: <HistoriasClinicas /> },
         
     ];

@@ -8,11 +8,14 @@ export default function FormTriajependientes() {
     const { datosPacientes, setDatosPacientes } = useContext(PacientesContext);
     const navigate = useNavigate();
     
-    const handleAgregarPaciente = () => {
+    /*const handleAgregarPaciente = () => {
         console.log("agregué un paciente de prueba")
         setDatosPacientes([ ...datosPacientes, { id: 3, identificacion: "7236", nombre: "Juan perez", area: "Pediatría", hora: "8:45 am", enAtencion: false } ]) 
-    }
+    }*/
 
+    const handleAtender = (idPaciente: string) => {
+        navigate(`/triaje/atencion-triaje/${idPaciente}`);
+    }
     return (
         <div className="space-y-8">
             <TablaBase<Paciente>
@@ -33,7 +36,7 @@ export default function FormTriajependientes() {
                                 :
                                 <button title="Atender"
                                     className="bg-[#174BAE] text-white text-sm focus:outline-none px-8 py-1 rounded-md hover:bg-[#0066D8] transition-colors w-full md:w-[60%] min-w-[140px]"
-                                    onClick={()=> navigate(`atencion-triaje/${Paciente.identificacion}`)}
+                                    onClick={() => handleAtender(Paciente.identificacion)}
                                 > Atender </button>
                                 }
                             </div>
@@ -47,7 +50,7 @@ export default function FormTriajependientes() {
                     5: "md:w-[100px]" 
                 }}
             />
-            <button title="Probar nuevo paciente" className="bg-[#174BAE] text-white text-sm focus:outline-none px-8 py-1 rounded-md hover:bg-[#0066D8] transition-colors w-full md:w-[60%] min-w-[140px]" onClick={handleAgregarPaciente}> Agregar Paciente </button>
+            {/*<button title="Probar nuevo paciente" className="bg-[#174BAE] text-white text-sm focus:outline-none px-8 py-1 rounded-md hover:bg-[#0066D8] transition-colors w-full md:w-[60%] min-w-[140px]" onClick={handleAgregarPaciente}> Agregar Paciente </button>*/}
         </div>
     );
 }

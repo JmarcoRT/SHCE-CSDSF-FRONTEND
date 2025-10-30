@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { type Paciente } from "../types/tablaTipos";
 
 export default function FormTriajependientes() {
-    const { datosPacientes, setDatosPacientes } = useContext(PacientesContext);
+    const { datosPacientes} = useContext(PacientesContext);
     const navigate = useNavigate();
     
     /*const handleAgregarPaciente = () => {
